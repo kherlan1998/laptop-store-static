@@ -3,379 +3,380 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LaptopStore | 20 Featured Laptops</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Surambaw LaptopStore | Featured Laptops</title>
+  
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+    
+    <style>
+        :root {
+            --primary-color: #4f46e5; 
+            --secondary-color: #6366f1; 
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .container {
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        
+      
+        .img-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.5rem;
+        }
+        .img-container img {
+            transition: transform 0.4s ease-in-out;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .specs-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%; 
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            text-align: center;
+            border-radius: 0.5rem;
+        }
+        .product-card:hover .specs-overlay {
+            opacity: 1;
+        }
+        .product-card:hover .img-container img {
+            transform: scale(1.05);
+        }
+
+    
+        .modal-backdrop {
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 50;
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <h1 class="logo">Surambaw LaptopStore corp.</h1>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#featured">Laptops (20)</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#" class="nav-button">Styles OS</a></li>
+<body class="min-h-screen flex flex-col">
+
+   
+    <header class="bg-white shadow-md sticky top-0 z-10">
+        <div class="container flex justify-between items-center py-4">
+            <h1 class="logo text-2xl font-extrabold text-indigo-600">Surambaw LaptopStore corp.</h1>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6 items-center">
+                    <li><a href="#home" class="text-gray-600 hover:text-indigo-600 transition duration-150">Home</a></li>
+                    <li><a href="#featured" class="text-gray-600 hover:text-indigo-600 transition duration-150">Laptops (12)</a></li>
+                    <li><a href="#about" class="text-gray-600 hover:text-indigo-600 transition duration-150">About Us</a></li>
+                    <li><a href="#contact" class="text-gray-600 hover:text-indigo-600 transition duration-150">Contact</a></li>
+                    <li><a href="#" class="nav-button bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-600 transition duration-150 font-semibold shadow-md">Styles OS</a></li>
                 </ul>
             </nav>
+            
+            <button class="md:hidden text-gray-600 hover:text-indigo-600 text-2xl">☰</button>
         </div>
     </header>
 
-    <main>
-        <section class="hero-banner" id="home">
-            <div class="container">
-                <div class="hero-content">
-                    <h2>Discover Your Next Laptop.</h2>
-                    <p>Explore a massive collection of 20 top-tier laptops for work, study, and gaming. Find the perfect machine for your needs.</p>
-                    <a href="#featured" class="cta-button">Browse All 20</a>
+    <main class="flex-grow">
+       
+        <section class="hero-banner py-16 bg-gray-100" id="home">
+            <div class="container flex flex-col md:flex-row items-center gap-8">
+                <div class="hero-content md:w-1/2">
+                    <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4">Discover Your Next Laptop.</h2>
+                    <p class="text-gray-600 mb-6 text-lg">Explore a massive collection of 12 top-tier laptops for work, study, and gaming. Find the perfect machine for your needs.</p>
+                    <a href="#featured" class="cta-button inline-block bg-indigo-600 text-white px-8 py-3 rounded-xl text-lg font-bold shadow-xl hover:bg-indigo-700 transition duration-300 transform hover:scale-105">Browse All 12</a>
                 </div>
-                <div class="hero-image-placeholder">
-                    <img src="images/laptop_collection.jpg" alt="A collection of diverse laptops displayed together" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
-                </div>
-            </div>
-        </section>
-
-        <section class="featured-laptops" id="featured">
-            <div class="container">
-                <h3 class="section-title">All 20 Top-Rated Laptops</h3>
-                <div class="product-grid">
-                    
-                    <div class="product-card">
-                        <div class="img-container">
-                            <img src="images/asus_zenbook.jpg" alt="Asus ZenBook Pro Duo Laptop">
-                            <div class="specs-overlay">
-                                <h4>Asus Zenbook Pro Duo</h4>
-                                <p>i7-12700H, 32GB LPDDR5 RAM, 2TB NVMe SSD, Dual OLED Screen.</p>
-                            </div>
-                        </div>
-                        <h4>Asus Zenbook Pro Duo</h4>
-                        <p class="specs-text">i7, 32GB RAM, 2TB SSD</p>
-                        <div class="product-footer">
-                            <span class="price">$1,799</span>
-                            <a href="#" class="add-to-cart-btn animated-btn">Order</a>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="img-container">
-                            <img src="images/dell_xps.jpg" alt="Dell XPS 15 Laptop">
-                            <div class="specs-overlay">
-                                <h4>Dell XPS 15</h4>
-                                <p>i7-13700H, 16GB DDR5 RAM, 1TB NVMe SSD, InfinityEdge Display.</p>
-                            </div>
-                        </div>
-                        <h4>Dell XPS 15</h4>
-                        <p class="specs-text">i7, 16GB RAM, 1TB SSD</p>
-                        <div class="product-footer">
-                            <span class="price">$1,399</span>
-                            <a href="#" class="add-to-cart-btn animated-btn">Order</a>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="img-container">
-                            <img src="images/hp_spectre.jpg" alt="HP Spectre x360 Laptop">
-                            <div class="specs-overlay">
-                                <h4>HP Spectre x360</h4>
-                                <p>i7-1355U, 16GB LPDDR4X RAM, 1TB SSD, 13.5" OLED 2-in-1.</p>
-                            </div>
-                        </div>
-                        <h4>HP Spectre x360</h4>
-                        <p class="specs-text">i7, 16GB RAM, 1TB SSD, 2-in-1</p>
-                        <div class="product-footer">
-                            <span class="price">$1,299</span>
-                            <a href="#" class="add-to-cart-btn animated-btn">Order</a>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="img-container">
-                            <img src="images/macbook_pro.jpg" alt="Macbook Pro M3 Laptop">
-                            <div class="specs-overlay">
-                                <h4>Macbook Pro M3 Max</h4>
-                                <p>Apple M3 Max Chip, 64GB Unified RAM, 4TB SSD, 16" Liquid Retina XDR.</p>
-                            </div>
-                        </div>
-                        <h4>Macbook Pro M3 Max</h4>
-                        <p class="specs-text">M3 Max, 64GB RAM, 4TB SSD</p>
-                        <div class="product-footer">
-                            <span class="price">$3,999</span>
-                            <a href="#" class="add-to-cart-btn animated-btn">Order</a>
-                        </div>
-                    </div>
-                    
-                    <div class="product-card">
-                        <div class="img-container">
-                            <img src="images/acer_predator.jpg" alt="Acer Predator Gaming Laptop">
-                            <div class="specs-overlay">
-                                <h4>Acer Predator Helios</h4>
-                                <p>i9-14900HX, 32GB DDR5 RAM, RTX 4080 12GB, 240Hz Display.</p>
-                            </div>
-                        </div>
-                        <h4>Acer Predator Helios</h4>
-                        <p class="specs-text">i9, 32GB RAM, RTX 4080</p>
-                        <div class="product-footer">
-                            <span class="price">$2,499</span>
-                            <a href="#" class="add-to-cart-btn animated-btn">Order</a>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="img-container">
-                            <img src="images/ms_surface.jpg" alt="Microsoft Surface Laptop">
-                            <div class="specs-overlay">
-                                <h4>MS Surface Laptop 5</h4>
-                                <p>i5-1235U, 8GB RAM, 512GB SSD, 13.5" PixelSense Touch Display.</p>
-                            </div>
-                        </div>
-                        <h4>MS Surface Laptop 5</h4>
-                        <p class="specs-text">i5, 8GB RAM, 512GB SSD</p>
-                        <div class="product-footer">
-                            <span class="price">$999</span>
-                            <a href="#" class="add-to-cart-btn animated-btn">Order</a>
-                        </div>
-                    </div>
-                    
-                    <div class="product-card">
-                        <div class="img-container">
-                            <img src="images/lenovo_thinkpad.jpg" alt="Lenovo ThinkPad Laptop">
-                            <div class="specs-overlay">
-                                <h4>Lenovo ThinkPad X1</h4>
-                                <p>i7-1465U, 32GB RAM, 1TB SSD, 14" OLED Screen, Business Class.</p>
-                            </div>
-                        </div>
-                        <h4>Lenovo ThinkPad X1</h4>
-                        <p class="specs-text">i7, 32GB RAM, Business Class</p>
-                        <div class="product-footer">
-                            <span class="price">$1,850</span>
-                            <a href="#" class="add-to-cart-btn animated-btn">Order</a>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="img-container">
-                            <img src="images/razer_blade.jpg" alt="Razer Blade Gaming Laptop">
-                            <div class="specs-overlay">
-                                <h4>Razer Blade 14</h4>
-                                <p>Ryzen 9 7940HS, 32GB RAM, RTX 4070, 1TB SSD, QHD 240Hz.</p>
-                            </div>
-                        </div>
-                        <h4>Razer Blade 14</h4>
-                        <p class="specs-text">Ryzen 9, RTX 4070, 1TB SSD</p>
-                        <div class="product-footer">
-                            <span class="price">$2,199</span>
-                            <a href="#" class="add-to-cart-btn animated-btn">Order</a>
-                        </div>
-                    </div>
-                    
-                    <div class="product-card">
-                        <div class="img-container">
-                            <img src="images/hp_envy.jpg" alt="HP Envy Laptop">
-                            <div class="specs-overlay">
-                                <h4>HP Envy 17</h4>
-                                <p>i7-13700H, 16GB RAM, 512GB SSD + 1TB HDD, 17.3" FHD Display.</p>
-                            </div>
-                        </div>
-                        <h4>HP Envy 17</h4>
-                        <p class="specs-text">i7, 16GB RAM, 512GB SSD + HDD</p>
-                        <div class="product-footer">
-                            <span class="price">$1,150</span>
-                            <a href="#" class="add-to-cart-btn animated-btn">Order</a>
-                        </div>
-                    </div>
-                    
-                    <div class="product-card">
-                        <div class="img-container">
-                            <img src="images/asus_rog.jpg" alt="Asus ROG Gaming Laptop">
-                            <div class="specs-overlay">
-                                <h4>Asus ROG Zephyrus</h4>
-                                <p>Ryzen 7 7735HS, 16GB RAM, RTX 4060, High Refresh.</p>
-                            </div>
-                        </div>
-                        <h4>Asus ROG Zephyrus</h4>
-                        <p class="specs-text">Ryzen 7, RTX 4060, High Refresh</p>
-                        <div class="product-footer">
-                            <span class="price">$1,699</span>
-                            <a href="#" class="add-to-cart-btn animated-btn">Order</a>
-                        </div>
-                    </div>
-                    
-                    <div class="product-card">
-                        <div class="img-container">
-                            <img src="images/dell_latitude.jpg" alt="Dell Latitude Laptop">
-                            <div class="specs-overlay">
-                                <h4>Dell Latitude 7400</h4>
-                                <p>i5-1240U, 16GB RAM, 512GB SSD, 14" FHD Display, Long Battery.</p>
-                            </div>
-                        </div>
-                        <h4>Dell Latitude 7400</h4>
-                        <p class="specs-text">i5, 16GB RAM, Long Battery</p>
-                        <div class="product-footer">
-                            <span class="price">$950</span>
-                            <a href="#" class="add-to-cart-btn animated-btn">Order</a>
-                        </div>
-                    </div>
-                    
-                    <div class="product-card">
-                        <div class="img-container">
-                            <img src="images/samsung_galaxy.jpg" alt="Samsung Galaxy Book">
-                            <div class="specs-overlay">
-                                <h4>Samsung Galaxy Book 3</h4>
-                                <p>i7-1360P, 16GB RAM, 1TB SSD, 14" AMOLED Display, S Pen support.</p>
-                            </div>
-                        </div>
-                        <h4>Samsung Galaxy Book 3</h4>
-                        <p class="specs-text">i7, 16GB RAM, AMOLED Display</p>
-                        <div class="product-footer">
-                            <span class="price">$1,450</span>
-                            <a href="#" class="add-to-cart-btn animated-btn">Order</a>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="img-container">
-                            <img src="images/google_pixelbook.jpg" alt="Google Pixelbook">
-                            <div class="specs-overlay">
-                                <h4>Google Pixelbook Go</h4>
-                                <p>i5-8200Y, 8GB RAM, 128GB SSD, 13.3" Touchscreen, Chrome OS.</p>
-                            </div>
-                        </div>
-                        <h4>Google Pixelbook Go</h4>
-                        <p class="specs-text">i5, 8GB RAM, Chrome OS</p>
-                        <div class="product-footer">
-                            <span class="price">$649</span>
-                            <a href="#" class="add-to-cart-btn animated-btn">Order</a>
-                        </div>
-                    </div>
-                    
-                    <div class="product-card">
-                        <div class="img-container">
-                            <img src="images/msi_titan.jpg" alt="MSI Gaming Laptop">
-                            <div class="specs-overlay">
-                                <h4>MSI Titan GT77</h4>
-                                <p>i9-14900HX, 64GB DDR5 RAM, RTX 4090 16GB, Cherry MX keyboard.</p>
-                            </div>
-                        </div>
-                        <h4>MSI Titan GT77</h4>
-                        <p class="specs-text">i9, 64GB RAM, RTX 4090</p>
-                        <div class="product-footer">
-                            <span class="price">$4,500</span>
-                            <a href="#" class="add-to-cart-btn animated-btn">Order</a>
-                        </div>
-                    </div>
-                    
-                    <div class="product-card">
-                        <div class="img-container">
-                            <img src="images/lg_gram.jpg" alt="Lightweight Laptop">
-                            <div class="specs-overlay">
-                                <h4>LG Gram 17</h4>
-                                <p>i7-1360P, 16GB RAM, 1TB SSD, 17" QHD, Ultra-light Magnesium Alloy.</p>
-                            </div>
-                        </div>
-                        <h4>LG Gram 17</h4>
-                        <p class="specs-text">i7, 16GB RAM, Ultra-light</p>
-                        <div class="product-footer">
-                            <span class="price">$1,350</span>
-                            <a href="#" class="add-to-cart-btn animated-btn">Order</a>
-                        </div>
-                    </div>
-                    
-                    <div class="product-card">
-                        <div class="img-container">
-                            <img src="images/alienware_m16.jpg" alt="Alienware Gaming Laptop">
-                            <div class="specs-overlay">
-                                <h4>Alienware m16 R2</h4>
-                                <p>Ryzen 7 7745HX, 32GB RAM, RTX 4070 8GB, 16" QHD 165Hz.</p>
-                            </div>
-                        </div>
-                        <h4>Alienware m16 R2</h4>
-                        <p class="specs-text">Ryzen 7, RTX 4070, 16GB RAM</p>
-                        <div class="product-footer">
-                            <span class="price">$2,099</span>
-                            <a href="#" class="add-to-cart-btn animated-btn">Order</a>
-                        </div>
-                    </div>
-                    
-                    <div class="product-card">
-                        <div class="img-container">
-                            <img src="images/lenovo_yoga.jpg" alt="Lenovo Yoga 2-in-1 Laptop">
-                            <div class="specs-overlay">
-                                <h4>Lenovo Yoga 9i</h4>
-                                <p>i7-1360P, 16GB RAM, 1TB SSD, 14" OLED Touchscreen, Convertible.</p>
-                            </div>
-                        </div>
-                        <h4>Lenovo Yoga 9i</h4>
-                        <p class="specs-text">i7, 16GB RAM, Convertible</p>
-                        <div class="product-footer">
-                            <span class="price">$1,499</span>
-                            <a href="#" class="add-to-cart-btn animated-btn">Order</a>
-                        </div>
-                    </div>
-                    
-                    <div class="product-card">
-                        <div class="img-container">
-                            <img src="images/acer_swift.jpg" alt="Acer Swift Laptop">
-                            <div class="specs-overlay">
-                                <h4>Acer Swift 3</h4>
-                                <p>i5-1135G7, 8GB RAM, 512GB SSD, 14" FHD Display, Thin and Light.</p>
-                            </div>
-                        </div>
-                        <h4>Acer Swift 3</h4>
-                        <p class="specs-text">i5, 8GB RAM, Student Budget</p>
-                        <div class="product-footer">
-                            <span class="price">$750</span>
-                            <a href="#" class="add-to-cart-btn animated-btn">Order</a>
-                        </div>
-                    </div>
-                    
-                    <div class="product-card">
-                        <div class="img-container">
-                            <img src="images/hp_omen.jpg" alt="HP Omen Gaming Laptop">
-                            <div class="specs-overlay">
-                                <h4>HP Omen 16</h4>
-                                <p>i7-13700H, 16GB RAM, RTX 4060 8GB, 16.1" QHD 165Hz.</p>
-                            </div>
-                        </div>
-                        <h4>HP Omen 16</h4>
-                        <p class="specs-text">i7, RTX 4060, High Res Screen</p>
-                        <div class="product-footer">
-                            <span class="price">$1,750</span>
-                            <a href="#" class="add-to-cart-btn animated-btn">Order</a>
-                        </div>
-                    </div>
-                    
-                    <div class="product-card">
-                        <div class="img-container">
-                            <img src="images/huawei_matebook.jpg" alt="Huawei MateBook Laptop">
-                            <div class="specs-overlay">
-                                <h4>Huawei MateBook X Pro</h4>
-                                <p>i7-1260P, 16GB RAM, 1TB SSD, 14.2" 3K Touch, Premium Build.</p>
-                            </div>
-                        </div>
-                        <h4>Huawei MateBook X Pro</h4>
-                        <p class="specs-text">i7, 16GB RAM, Premium Build</p>
-                        <div class="product-footer">
-                            <span class="price">$1,599</span>
-                            <a href="#" class="add-to-cart-btn animated-btn">Order</a>
-                        </div>
-                    </div>
-
+                <div class="hero-image-placeholder md:w-1/2 w-full h-64 sm:h-80 rounded-xl overflow-hidden shadow-2xl">
+                   
+                    <img src="images/laptop_collection.jpg" onerror="this.onerror=null;" alt="A collection of diverse laptops displayed together" class="w-full h-full object-cover">
                 </div>
             </div>
         </section>
 
-        <section class="info-sections">
+       
+        <section class="featured-laptops py-16" id="featured">
             <div class="container">
-                <div class="info-grid">
-                    <div class="info-box" id="about">
-                        <h3 class="section-title">About LaptopStore</h3>
-                        <p>We are dedicated to offering a vast, curated selection of the world's best laptops. Quality and customer satisfaction are our top priorities.</p>
+                <h3 class="section-title text-3xl font-bold text-gray-900 mb-8 border-b-2 border-indigo-200 pb-2">Latest Laptops</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    
+                  
+                    <div class="product-card bg-white p-4 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <div class="img-container h-40 mb-4">
+                            
+                            <img src="images/asus_zenbook.jpg" onerror="this.onerror=null;"alt="Asus ZenBook Pro Duo Laptop">
+                            <div class="specs-overlay">
+                                <h4 class="font-bold text-xl mb-2">Asus Zenbook Pro Duo</h4>
+                                <p class="text-sm text-gray-200">i7-12700H, 32GB LPDDR5 RAM, 2TB NVMe SSD, Dual OLED Screen.</p>
+                            </div>
+                        </div>
+                        <h4 class="text-lg font-semibold text-gray-800">Asus Zenbook Pro Duo</h4>
+                        <p class="specs-text text-gray-500 text-sm mb-4">i7, 32GB RAM, 2TB SSD</p>
+                        <div class="product-footer flex justify-between items-center">
+                            <span class="text-xl font-bold text-indigo-600 price">$1,799</span>
+                            <div class="flex space-x-2">
+                                <button onclick="showCartModal('Asus Zenbook Pro Duo')" class="bg-gray-200 text-gray-700 hover:bg-gray-300 transition duration-150 px-3 py-1 rounded-lg text-sm font-medium shadow">Add to Cart</button>
+                                <button onclick="showOrderModal('Asus Zenbook Pro Duo', '$1,799')" class="bg-indigo-600 text-white hover:bg-indigo-700 transition duration-150 px-3 py-1 rounded-lg text-sm font-medium shadow-md">Buy Now</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="info-box" id="contact">
-                        <h3 class="section-title">Get in Touch</h3>
-                        <p>Email: support@laptopstore.com<br>Phone: (555) 123-4567<br>Address: 100 Tech Park, Silicon Valley, CA</p>
+
+                    <div class="product-card bg-white p-4 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <div class="img-container h-40 mb-4">
+                        
+                            <img src="images/dell_xps.jpg" onerror="this.onerror=null; " alt="Dell XPS 15 Laptop">
+                            <div class="specs-overlay">
+                                <h4 class="font-bold text-xl mb-2">Dell XPS 15</h4>
+                                <p class="text-sm text-gray-200">i7-13700H, 16GB DDR5 RAM, 1TB NVMe SSD, InfinityEdge Display.</p>
+                            </div>
+                        </div>
+                        <h4 class="text-lg font-semibold text-gray-800">Dell XPS 15</h4>
+                        <p class="specs-text text-gray-500 text-sm mb-4">i7, 16GB RAM, 1TB SSD</p>
+                        <div class="product-footer flex justify-between items-center">
+                            <span class="text-xl font-bold text-indigo-600 price">$1,399</span>
+                            <div class="flex space-x-2">
+                                <button onclick="showCartModal('Dell XPS 15')" class="bg-gray-200 text-gray-700 hover:bg-gray-300 transition duration-150 px-3 py-1 rounded-lg text-sm font-medium shadow">Add to Cart</button>
+                                <button onclick="showOrderModal('Dell XPS 15', '$1,399')" class="bg-indigo-600 text-white hover:bg-indigo-700 transition duration-150 px-3 py-1 rounded-lg text-sm font-medium shadow-md">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                  
+                    <div class="product-card bg-white p-4 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <div class="img-container h-40 mb-4">
+                           
+                            <img src="images/hp_spectre.jpg" onerror="this.onerror=null;" alt="HP Spectre x360 Laptop">
+                            <div class="specs-overlay">
+                                <h4 class="font-bold text-xl mb-2">HP Spectre x360</h4>
+                                <p class="text-sm text-gray-200">i7-1355U, 16GB LPDDR4X RAM, 1TB SSD, 13.5" OLED 2-in-1.</p>
+                            </div>
+                        </div>
+                        <h4 class="text-lg font-semibold text-gray-800">HP Spectre x360</h4>
+                        <p class="specs-text text-gray-500 text-sm mb-4">i7, 16GB RAM, 1TB SSD, 2-in-1</p>
+                        <div class="product-footer flex justify-between items-center">
+                            <span class="text-xl font-bold text-indigo-600 price">$1,299</span>
+                            <div class="flex space-x-2">
+                                <button onclick="showCartModal('HP Spectre x360')" class="bg-gray-200 text-gray-700 hover:bg-gray-300 transition duration-150 px-3 py-1 rounded-lg text-sm font-medium shadow">Add to Cart</button>
+                                <button onclick="showOrderModal('HP Spectre x360', '$1,299')" class="bg-indigo-600 text-white hover:bg-indigo-700 transition duration-150 px-3 py-1 rounded-lg text-sm font-medium shadow-md">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                  
+                    <div class="product-card bg-white p-4 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <div class="img-container h-40 mb-4">
+                           
+                            <img src="images/macbook_pro.jpg" onerror="this.onerror=null;" alt="Macbook Pro M3 Laptop">
+                            <div class="specs-overlay">
+                                <h4 class="font-bold text-xl mb-2">Macbook Pro M3 Max</h4>
+                                <p class="text-sm text-gray-200">Apple M3 Max Chip, 64GB Unified RAM, 4TB SSD, 16" Liquid Retina XDR.</p>
+                            </div>
+                        </div>
+                        <h4 class="text-lg font-semibold text-gray-800">Macbook Pro M3 Max</h4>
+                        <p class="specs-text text-gray-500 text-sm mb-4">M3 Max, 64GB RAM, 4TB SSD</p>
+                        <div class="product-footer flex justify-between items-center">
+                            <span class="text-xl font-bold text-indigo-600 price">$3,999</span>
+                            <div class="flex space-x-2">
+                                <button onclick="showCartModal('Macbook Pro M3 Max')" class="bg-gray-200 text-gray-700 hover:bg-gray-300 transition duration-150 px-3 py-1 rounded-lg text-sm font-medium shadow">Add to Cart</button>
+                                <button onclick="showOrderModal('Macbook Pro M3 Max', '$3,999')" class="bg-indigo-600 text-white hover:bg-indigo-700 transition duration-150 px-3 py-1 rounded-lg text-sm font-medium shadow-md">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                
+                    <div class="product-card bg-white p-4 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <div class="img-container h-40 mb-4">
+                      
+                            <img src="images/acer_predator.jpg" onerror="this.onerror=null;" alt="Acer Predator Gaming Laptop">
+                            <div class="specs-overlay">
+                                <h4 class="font-bold text-xl mb-2">Acer Predator Helios</h4>
+                                <p class="text-sm text-gray-200">i9-14900HX, 32GB DDR5 RAM, RTX 4080 12GB, 240Hz Display.</p>
+                            </div>
+                        </div>
+                        <h4 class="text-lg font-semibold text-gray-800">Acer Predator Helios</h4>
+                        <p class="specs-text text-gray-500 text-sm mb-4">i9, 32GB RAM, RTX 4080</p>
+                        <div class="product-footer flex justify-between items-center">
+                            <span class="text-xl font-bold text-indigo-600 price">$2,499</span>
+                            <div class="flex space-x-2">
+                                <button onclick="showCartModal('Acer Predator Helios')" class="bg-gray-200 text-gray-700 hover:bg-gray-300 transition duration-150 px-3 py-1 rounded-lg text-sm font-medium shadow">Add to Cart</button>
+                                <button onclick="showOrderModal('Acer Predator Helios', '$2,499')" class="bg-indigo-600 text-white hover:bg-indigo-700 transition duration-150 px-3 py-1 rounded-lg text-sm font-medium shadow-md">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+          
+                    <div class="product-card bg-white p-4 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <div class="img-container h-40 mb-4">
+                            
+                            <img src="images/ms_surface.jpg" onerror="this.onerror=null;" alt="Microsoft Surface Laptop">
+                            <div class="specs-overlay">
+                                <h4 class="font-bold text-xl mb-2">MS Surface Laptop 5</h4>
+                                <p class="text-sm text-gray-200">i5-1235U, 8GB RAM, 512GB SSD, 13.5" PixelSense Touch Display.</p>
+                            </div>
+                        </div>
+                        <h4 class="text-lg font-semibold text-gray-800">MS Surface Laptop 5</h4>
+                        <p class="specs-text text-gray-500 text-sm mb-4">i5, 8GB RAM, 512GB SSD</p>
+                        <div class="product-footer flex justify-between items-center">
+                            <span class="text-xl font-bold text-indigo-600 price">$999</span>
+                            <div class="flex space-x-2">
+                                <button onclick="showCartModal('MS Surface Laptop 5')" class="bg-gray-200 text-gray-700 hover:bg-gray-300 transition duration-150 px-3 py-1 rounded-lg text-sm font-medium shadow">Add to Cart</button>
+                                <button onclick="showOrderModal('MS Surface Laptop 5', '$999')" class="bg-indigo-600 text-white hover:bg-indigo-700 transition duration-150 px-3 py-1 rounded-lg text-sm font-medium shadow-md">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+               
+                    <div class="product-card bg-white p-4 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <div class="img-container h-40 mb-4">
+                        
+                            <img src="images/lenovo_thinkpad.jpg" onerror="this.onerror=null; " alt="Lenovo ThinkPad Laptop">
+                            <div class="specs-overlay">
+                                <h4 class="font-bold text-xl mb-2">Lenovo ThinkPad X1</h4>
+                                <p class="text-sm text-gray-200">i7-1465U, 32GB RAM, 1TB SSD, 14" OLED Screen, Business Class.</p>
+                            </div>
+                        </div>
+                        <h4 class="text-lg font-semibold text-gray-800">Lenovo ThinkPad X1</h4>
+                        <p class="specs-text text-gray-500 text-sm mb-4">i7, 32GB RAM, Business Class</p>
+                        <div class="product-footer flex justify-between items-center">
+                            <span class="text-xl font-bold text-indigo-600 price">$1,850</span>
+                            <div class="flex space-x-2">
+                                <button onclick="showCartModal('Lenovo ThinkPad X1')" class="bg-gray-200 text-gray-700 hover:bg-gray-300 transition duration-150 px-3 py-1 rounded-lg text-sm font-medium shadow">Add to Cart</button>
+                                <button onclick="showOrderModal('Lenovo ThinkPad X1', '$1,850')" class="bg-indigo-600 text-white hover:bg-indigo-700 transition duration-150 px-3 py-1 rounded-lg text-sm font-medium shadow-md">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                   
+                    <div class="product-card bg-white p-4 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <div class="img-container h-40 mb-4">
+                        
+                            <img src="images/razer_blade.jpg" onerror="this.onerror=null;" alt="Razer Blade Gaming Laptop">
+                            <div class="specs-overlay">
+                                <h4 class="font-bold text-xl mb-2">Razer Blade 14</h4>
+                                <p class="text-sm text-gray-200">Ryzen 9 7940HS, 32GB RAM, RTX 4070, 1TB SSD, QHD 240Hz.</p>
+                            </div>
+                        </div>
+                        <h4 class="text-lg font-semibold text-gray-800">Razer Blade 14</h4>
+                        <p class="specs-text text-gray-500 text-sm mb-4">Ryzen 9, RTX 4070, 1TB SSD</p>
+                        <div class="product-footer flex justify-between items-center">
+                            <span class="text-xl font-bold text-indigo-600 price">$2,199</span>
+                            <div class="flex space-x-2">
+                                <button onclick="showCartModal('Razer Blade 14')" class="bg-gray-200 text-gray-700 hover:bg-gray-300 transition duration-150 px-3 py-1 rounded-lg text-sm font-medium shadow">Add to Cart</button>
+                                <button onclick="showOrderModal('Razer Blade 14', '$2,199')" class="bg-indigo-600 text-white hover:bg-indigo-700 transition duration-150 px-3 py-1 rounded-lg text-sm font-medium shadow-md">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="product-card bg-white p-4 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <div class="img-container h-40 mb-4">
+                        
+                            <img src="images/hp_envy.jpg" onerror="this.onerror=null;" alt="HP Envy Laptop">
+                            <div class="specs-overlay">
+                                <h4 class="font-bold text-xl mb-2">HP Envy 17</h4>
+                                <p class="text-sm text-gray-200">i7-13700H, 16GB RAM, 512GB SSD + 1TB HDD, 17.3" FHD Display.</p>
+                            </div>
+                        </div>
+                        <h4 class="text-lg font-semibold text-gray-800">HP Envy 17</h4>
+                        <p class="specs-text text-gray-500 text-sm mb-4">i7, 16GB RAM, 512GB SSD + HDD</p>
+                        <div class="product-footer flex justify-between items-center">
+                            <span class="text-xl font-bold text-indigo-600 price">$1,150</span>
+                            <div class="flex space-x-2">
+                                <button onclick="showCartModal('HP Envy 17')" class="bg-gray-200 text-gray-700 hover:bg-gray-300 transition duration-150 px-3 py-1 rounded-lg text-sm font-medium shadow">Add to Cart</button>
+                                <button onclick="showOrderModal('HP Envy 17', '$1,150')" class="bg-indigo-600 text-white hover:bg-indigo-700 transition duration-150 px-3 py-1 rounded-lg text-sm font-medium shadow-md">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="product-card bg-white p-4 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <div class="img-container h-40 mb-4">
+                      
+                            <img src="images/asus_rog.jpg" onerror="this.onerror=null; " alt="Asus ROG Gaming Laptop">
+                            <div class="specs-overlay">
+                                <h4 class="font-bold text-xl mb-2">Asus ROG Zephyrus</h4>
+                                <p class="text-sm text-gray-200">Ryzen 7 7735HS, 16GB RAM, RTX 4060, High Refresh.</p>
+                            </div>
+                        </div>
+                        <h4 class="text-lg font-semibold text-gray-800">Asus ROG Zephyrus</h4>
+                        <p class="specs-text text-gray-500 text-sm mb-4">Ryzen 7, RTX 4060, High Refresh</p>
+                        <div class="product-footer flex justify-between items-center">
+                            <span class="text-xl font-bold text-indigo-600 price">$1,699</span>
+                            <div class="flex space-x-2">
+                                <button onclick="showCartModal('Asus ROG Zephyrus')" class="bg-gray-200 text-gray-700 hover:bg-gray-300 transition duration-150 px-3 py-1 rounded-lg text-sm font-medium shadow">Add to Cart</button>
+                                <button onclick="showOrderModal('Asus ROG Zephyrus', '$1,699')" class="bg-indigo-600 text-white hover:bg-indigo-700 transition duration-150 px-3 py-1 rounded-lg text-sm font-medium shadow-md">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+            
+                    <div class="product-card bg-white p-4 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <div class="img-container h-40 mb-4">
+                        
+                            <img src="images/dell_latitude.jpg" onerror="this.onerror=null; " alt="Dell Latitude Laptop">
+                            <div class="specs-overlay">
+                                <h4 class="font-bold text-xl mb-2">Dell Latitude 7400</h4>
+                                <p class="text-sm text-gray-200">i5-1240U, 16GB RAM, 512GB SSD, 14" FHD Display, Long Battery.</p>
+                            </div>
+                        </div>
+                        <h4 class="text-lg font-semibold text-gray-800">Dell Latitude 7400</h4>
+                        <p class="specs-text text-gray-500 text-sm mb-4">i5, 16GB RAM, Long Battery</p>
+                        <div class="product-footer flex justify-between items-center">
+                            <span class="text-xl font-bold text-indigo-600 price">$950</span>
+                            <div class="flex space-x-2">
+                                <button onclick="showCartModal('Dell Latitude 7400')" class="bg-gray-200 text-gray-700 hover:bg-gray-300 transition duration-150 px-3 py-1 rounded-lg text-sm font-medium shadow">Add to Cart</button>
+                                <button onclick="showOrderModal('Dell Latitude 7400', '$950')" class="bg-indigo-600 text-white hover:bg-indigo-700 transition duration-150 px-3 py-1 rounded-lg text-sm font-medium shadow-md">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card bg-white p-4 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <div class="img-container h-40 mb-4">
+                          
+                            <img src="samsung_galaxy.jpg" onerror="this.onerror=null;" alt="Samsung Galaxy Book">
+                            <div class="specs-overlay">
+                                <h4 class="font-bold text-xl mb-2">Samsung Galaxy Book 3</h4>
+                                <p class="text-sm text-gray-200">i7-1360P, 16GB RAM, 1TB SSD, 14" AMOLED Display, S Pen support.</p>
+                            </div>
+                        </div>
+                        <h4 class="text-lg font-semibold text-gray-800">Samsung Galaxy Book 3</h4>
+                        <p class="specs-text text-gray-500 text-sm mb-4">i7, 16GB RAM, AMOLED Display</p>
+                        <div class="product-footer flex justify-between items-center">
+                            <span class="text-xl font-bold text-indigo-600 price">$1,450</span>
+                            <div class="flex space-x-2">
+                                <button onclick="showCartModal('Samsung Galaxy Book 3')" class="bg-gray-200 text-gray-700 hover:bg-gray-300 transition duration-150 px-3 py-1 rounded-lg text-sm font-medium shadow">Add to Cart</button>
+                                <button onclick="showOrderModal('Samsung Galaxy Book 3', '$1,450')" class="bg-indigo-600 text-white hover:bg-indigo-700 transition duration-150 px-3 py-1 rounded-lg text-sm font-medium shadow-md">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                   
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="info-sections py-12 bg-gray-50 border-t border-gray-200">
+            <div class="container">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="info-box bg-white p-6 rounded-xl shadow-lg" id="about">
+                        <h3 class="section-title text-2xl font-bold text-gray-800 mb-4">About LaptopStore</h3>
+                        <p class="text-gray-600">We are dedicated to offering a vast, curated selection of the world's best laptops. Quality and customer satisfaction are our top priorities.</p>
+                    </div>
+                    <div class="info-box bg-white p-6 rounded-xl shadow-lg" id="contact">
+                        <h3 class="section-title text-2xl font-bold text-gray-800 mb-4">Get in Touch</h3>
+                        <p class="text-gray-600">Email: support@laptopstore.com<br>Phone: (555) 123-4567<br>Address: 100 Tech Park, Silicon Valley, CA</p>
                     </div>
                 </div>
             </div>
@@ -383,10 +384,159 @@
 
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 LaptopStore. All rights reserved. | <a href="#">Terms of Service</a></p>
+   
+    <footer class="bg-gray-800 text-white py-6 mt-auto">
+        <div class="container text-center">
+            <p>&copy; 2025 LaptopStore. All rights reserved. | <a href="#" class="text-indigo-400 hover:text-indigo-300">Terms of Service</a></p>
         </div>
     </footer>
+
+   
+    <div id="cartModal" class="fixed inset-0 hidden items-center justify-center modal-backdrop transition-opacity duration-300">
+        <div class="bg-white p-8 rounded-xl shadow-2xl max-w-sm w-full transform scale-95 transition-transform duration-300">
+            <div class="text-center">
+                <svg class="mx-auto h-12 w-12 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <h3 class="mt-2 text-xl font-bold text-gray-900">Success!</h3>
+                <p id="cartModalText" class="mt-2 text-sm text-gray-500">
+                    [Product Name] has been successfully added to your cart.
+                </p>
+            </div>
+            <div class="mt-4">
+                <button onclick="closeCartModal()" class="w-full inline-flex justify-center rounded-lg border border-transparent px-4 py-2 bg-indigo-600 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none transition duration-150">
+                    Continue Shopping
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="orderModal" class="fixed inset-0 hidden items-center justify-center modal-backdrop transition-opacity duration-300">
+        <div class="bg-white p-8 rounded-xl shadow-2xl max-w-lg w-full transform scale-95 transition-transform duration-300">
+            
+            <div id="orderFormContent">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Complete Your Order</h3>
+                <p class="text-gray-600 mb-4">You are ordering: <span id="orderProductDisplay" class="font-semibold text-indigo-600"></span></p>
+
+                <form id="placeOrderForm" class="space-y-4">
+                    <div>
+                        <label for="fullName" class="block text-sm font-medium text-gray-700">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="John Doe" class="mt-1 block w-full rounded-lg border-gray-300 border p-2 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                    </div>
+                    <div>
+                        <label for="address" class="block text-sm font-medium text-gray-700">Shipping Address</label>
+                        <textarea id="address" name="address" required placeholder="123 Main St, City, Zip, Country" rows="3" class="mt-1 block w-full rounded-lg border-gray-300 border p-2 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
+                    </div>
+                    <div>
+                        <label for="phoneNumber" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                        <input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="(555) 123-4567" class="mt-1 block w-full rounded-lg border-gray-300 border p-2 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                    </div>
+                    
+                    <button type="submit" class="w-full inline-flex justify-center rounded-lg border border-transparent px-4 py-2 bg-indigo-600 text-lg font-medium text-white shadow-xl hover:bg-indigo-700 focus:outline-none transition duration-150 transform hover:scale-[1.01]">
+                        Place Order
+                    </button>
+                </form>
+            </div>
+
+            <div id="orderSuccessContent" class="hidden text-center">
+                <svg class="mx-auto h-12 w-12 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7m-6 1a5 5 0 100 10 5 5 0 000-10z"></path></svg>
+                <h3 class="mt-2 text-xl font-bold text-gray-900">Order Placed!</h3>
+                <p class="mt-2 text-sm text-gray-500">
+                    Successfully placed order for <span id="successProductDisplay" class="font-semibold text-indigo-600"></span>.
+                </p>
+                <p class="mt-2 text-md font-medium text-gray-700">
+                    Wait in a few days to deliver your order. Thank you for trusting Surambaw LaptopStore!
+                </p>
+                <button onclick="closeOrderModal()" class="mt-6 w-full inline-flex justify-center rounded-lg border border-transparent px-4 py-2 bg-indigo-600 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none transition duration-150">
+                    Done
+                </button>
+            </div>
+            
+        </div>
+    </div>
+
+    <script>
+   
+        let currentOrderProduct = '';
+
+        
+        
+        const cartModal = document.getElementById('cartModal');
+        const cartModalText = document.getElementById('cartModalText');
+
+        function showCartModal(productName) {
+            cartModalText.textContent = `${productName} has been successfully added to your cart.`;
+            cartModal.classList.remove('hidden');
+            cartModal.classList.add('flex');
+            
+            cartModal.querySelector('button').focus(); 
+        }
+
+        function closeCartModal() {
+            cartModal.classList.add('hidden');
+            cartModal.classList.remove('flex');
+        }
+
+   
+
+        const orderModal = document.getElementById('orderModal');
+        const orderFormContent = document.getElementById('orderFormContent');
+        const orderSuccessContent = document.getElementById('orderSuccessContent');
+        const orderProductDisplay = document.getElementById('orderProductDisplay');
+        const successProductDisplay = document.getElementById('successProductDisplay');
+        const placeOrderForm = document.getElementById('placeOrderForm');
+
+        function showOrderModal(productName, productPrice) {
+            currentOrderProduct = `${productName} (${productPrice})`;
+            
+           
+            orderSuccessContent.classList.add('hidden');
+            orderFormContent.classList.remove('hidden');
+            placeOrderForm.reset();
+
+          
+            orderProductDisplay.textContent = currentOrderProduct;
+            
+         
+            orderModal.classList.remove('hidden');
+            orderModal.classList.add('flex');
+
+            
+            document.getElementById('fullName').focus();
+        }
+
+        function closeOrderModal() {
+            orderModal.classList.add('hidden');
+            orderModal.classList.remove('flex');
+        }
+
+     
+        placeOrderForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            
+            const fullName = document.getElementById('fullName').value.trim();
+            const address = document.getElementById('address').value.trim();
+            const phoneNumber = document.getElementById('phoneNumber').value.trim();
+
+            if (!fullName || !address || !phoneNumber) {
+               
+                console.error("Please fill out all required fields.");
+                return; 
+            }
+
+          
+            console.log("Processing order for:", currentOrderProduct);
+            console.log("Customer:", fullName, "Address:", address, "Phone:", phoneNumber);
+
+          
+            orderFormContent.classList.add('hidden');
+            successProductDisplay.textContent = currentOrderProduct;
+            orderSuccessContent.classList.remove('hidden');
+            
+            
+            orderSuccessContent.querySelector('button').focus(); 
+        });
+
+    </script>
 </body>
 </html>
